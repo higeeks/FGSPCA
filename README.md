@@ -27,6 +27,7 @@ subject to A^T A = I .
 $$ minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
 subject to A^T A = I . $$
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 Here $p_1(\beta_j)$ and $p_2(\beta_j)$ are two non-convex regularization functions.
 The matrix ``B`` is the sparse loadings matrix with grouping effect and ``A`` is an orthonormal matrix.
