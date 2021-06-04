@@ -45,6 +45,10 @@ subject to A^T A = I . t " />
 subject to A^T A = I</pre>
 
 
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}) 
+
+
+
 Here $p_1(\beta_j)$ and $p_2(\beta_j)$ are two non-convex regularization functions.
 The matrix ``B`` is the sparse loadings matrix with grouping effect and ``A`` is an orthonormal matrix.
 Here we use a combination of the $p_1(\beta_j)$ and $p_1(\beta_j)$ as non-convex sparsity-promoting and grouping-promoting regularizers.
