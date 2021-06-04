@@ -42,8 +42,8 @@ subject to
 Here 
 ![\large p_1(\beta_j)=\sum_{l=1}^p\min(\frac{|\beta_{jl}|}{\tau},1)](https://latex.codecogs.com/svg.latex?\large&space;p_1(\beta_j)=\sum_{l=1}^p\min(\frac{|\beta_{jl}|}{\tau},1)) 
 
-![\large p_2(\beta_j)=\sum_{l<l',(l,l')\inE}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1)
-](https://latex.codecogs.com/svg.latex?\large&space;p_2(\beta_j)=\sum_{l<l',(l,l')\inE}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1)
+![\large p_2(\beta_j)=\sum_{l<l',(l,l')E}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1)
+](https://latex.codecogs.com/svg.latex?\large&space;p_2(\beta_j)=\sum_{l<l',(l,l')E}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1)
 ) 
 
 <!-- ![\large A^TA=I](https://latex.codecogs.com/svg.latex?\large&space;A^TA=I) 
