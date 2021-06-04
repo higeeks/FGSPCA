@@ -39,6 +39,11 @@ subject to A^T A = I .">
 - <img src="https://latex.codecogs.com/gif.latex?\text { minimize } S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
 subject to A^T A = I . t " />
 
+<pre xml:lang="latex">\sqrt{2}</pre>
+
+<pre xml:lang="latex"> minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
+subject to A^T A = I</pre>
+
 
 Here $p_1(\beta_j)$ and $p_2(\beta_j)$ are two non-convex regularization functions.
 The matrix ``B`` is the sparse loadings matrix with grouping effect and ``A`` is an orthonormal matrix.
