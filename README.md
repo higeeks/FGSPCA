@@ -27,8 +27,8 @@ subject to A^T A = I .
 $$ minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
 subject to A^T A = I . $$
 
-![\Large minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
-subject to A^T A = I](https://latex.codecogs.com/svg.latex?\Large&space;minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
+![\Large \min S(A,B)=1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
+subject to A^T A = I](https://latex.codecogs.com/svg.latex?\Large&space;\min S(A,B)=1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
 subject to A^T A = I) 
 
 
