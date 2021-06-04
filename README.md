@@ -30,7 +30,7 @@ subject to A^T A = I</pre> -->
 
 
 ```
-minimize S(A, B), 
+minimize S(A, B), subject to A^TA=I.
 ```
 ![\large S(A,B)=1/2\|X-XBA^T\|_F^2+\lambda\|B\|_2^2+\lambda_1\sum_{j=1}^{k}p_1(\beta_l)+\lambda_2\sum_{j=1}^{k}p_2(\beta_l)](https://latex.codecogs.com/svg.latex?\large&space;S(A,B)=1/2\|X-XBA^T\|_F^2+\lambda\|B\|_2^2+\lambda_1\sum_{j=1}^{k}p_1(\beta_l)+\lambda_2\sum_{j=1}^{k}p_2(\beta_l)) 
 
