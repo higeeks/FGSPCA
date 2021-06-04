@@ -63,7 +63,7 @@ Z = X %*% B .
 Specifically, the interface of the FGSPCA function is:
 
 ```R
-FGSPCA(X, B_init, K, para, tau_S=0.05, lambda2=0.1, lambda3=0.1,use.corr=FALSE)
+FGSPCA(X, B_init, K, para, type="predictor", tau_S=0.05, lambda2=0.1, lambda3=0.1,use.corr=FALSE)
 
 ```
 
@@ -77,6 +77,8 @@ The description of the arguments is listed in the following:
 * ``K`` specifies the target rank, i.e., number of components to be computed.
 
 * ``para`` is a list of $\lambda_1$ with length of ``K``, the sparsity controlling parameters, tuning parameter corresponding to $p_1(\beta_l)$. Higher values lead to sparser components. 
+
+* ``type``  type of ``X``, which can take values of ``predictor``, or ``Gram``. If `type="Gram"` the model should deal with the root matrix of ``X``. If `type="predictor"` the model should directly deal with the matrix ``X``.
 
 * ``tau_S`` $\tau$ the controlling parameter corresponding to $p_1(\beta_l)$ and $p_2(\beta_l)$, which determines when the small values of $|\beta_l|$ will be penalized and when the small difference values of $|\beta_l - \beta_{l'}|$ will be penalized.
 
