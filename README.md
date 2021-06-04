@@ -17,27 +17,38 @@ This package provides FGSPCA in R:
 FGSPCA considers an additional grouping structure where the loadings share similar coefficients (i.e., feature grouping), besides a special group with all coefficients being zero (i.e., feature selection). 
 FGSPCA allows the loadings to belong to disjoint homogeneous groups, with sparsity as a special case.
 More concreatly, given a data matrix ``X`` with shape ``(n,p)``, FGSPCA attemps to minimize the following
-optimization problem:
-
+optimization problem 
 
 ```math
-minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
+minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_l) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_l), 
 subject to A^T A = I .
 ```
-$$ minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
-subject to A^T A = I . $$
-
-![\large S(A,B)=1/2\|X-XBA^T\|_F^2+\lambda\|B\|_2^2+\lambda_1\sum_{j=1}^{k}p_1(\beta_j)+\lambda_2\sum_{j=1}^{k}p_2(\beta_j)](https://latex.codecogs.com/svg.latex?\large&space;S(A,B)=1/2\|X-XBA^T\|_F^2+\lambda\|B\|_2^2+\lambda_1\sum_{j=1}^{k}p_1(\beta_j)+\lambda_2\sum_{j=1}^{k}p_2(\beta_j)) 
-
-
-<pre xml:lang="latex">\sqrt{2}</pre>
-
-<pre xml:lang="latex"> minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_j) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_j), 
-subject to A^T A = I</pre>
+<!-- $$ minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_l) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_l), 
+subject to A^T A = I . $$ -->
+<!-- <pre xml:lang="latex"> minimize S(A,B) = 1/2 \|X - X\cdot B\cdot A^T \|_F^2 + \lambda \|B\|_2^2 + \lambda_1 \sum_{j=1}^{k} p_1(\beta_l) + \lambda_2 \sum_{j=1}^{k}p_2(\beta_l), 
+subject to A^T A = I</pre> -->
 
 
-![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}) 
+```
+minimize S(A, B), 
+```
+![\large S(A,B)=1/2\|X-XBA^T\|_F^2+\lambda\|B\|_2^2+\lambda_1\sum_{j=1}^{k}p_1(\beta_l)+\lambda_2\sum_{j=1}^{k}p_2(\beta_l)](https://latex.codecogs.com/svg.latex?\large&space;S(A,B)=1/2\|X-XBA^T\|_F^2+\lambda\|B\|_2^2+\lambda_1\sum_{j=1}^{k}p_1(\beta_l)+\lambda_2\sum_{j=1}^{k}p_2(\beta_l)) 
 
+<!-- ![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})  -->
+
+subject to 
+![\large A^TA=I](https://latex.codecogs.com/svg.latex?\large&space;A^TA=I) 
+
+Here 
+![\large p_1(\beta_j)=\sum_{l=1}^p\min(\frac{|\beta_{jl}|}{\tau},1)](https://latex.codecogs.com/svg.latex?\large&space;p_1(\beta_j)=\sum_{l=1}^p\min(\frac{|\beta_{jl}|}{\tau},1)) 
+
+![\large p_2(\beta_j)=\sum_{l<l',(l,l')\in E}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1)
+](https://latex.codecogs.com/svg.latex?\large&space;p_2(\beta_j)=\sum_{l<l',(l,l')\in E}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1)
+) 
+
+<!-- ![\large A^TA=I](https://latex.codecogs.com/svg.latex?\large&space;A^TA=I) 
+p_1(\beta_j)=\sum_{l=1}^p\min(\frac{|\beta_{jl}|}{\tau},1)
+p_2(\beta_j)=\sum_{l<l',(l,l')\in E}\min(\frac{|\beta_{jl}-\beta_{jl'}|}{\tau},1) -->
 
 
 Here $p_1(\beta_j)$ and $p_2(\beta_j)$ are two non-convex regularization functions.
@@ -65,11 +76,11 @@ The description of the arguments is listed in the following:
 
 * ``K`` specifies the target rank, i.e., number of components to be computed.
 
-* ``para`` is a list of $\lambda_1$ with length of ``K``, the sparsity controlling parameters, tuning parameter corresponding to $p_1(\beta_j)$. Higher values lead to sparser components. 
+* ``para`` is a list of $\lambda_1$ with length of ``K``, the sparsity controlling parameters, tuning parameter corresponding to $p_1(\beta_l)$. Higher values lead to sparser components. 
 
-* ``tau_S`` $\tau$ the controlling parameter corresponding to $p_1(\beta_j)$ and $p_2(\beta_j)$, which determines when the small values of $|\beta_j|$ will be penalized and when the small difference values of $|\beta_j - \beta_{j'}|$ will be penalized.
+* ``tau_S`` $\tau$ the controlling parameter corresponding to $p_1(\beta_l)$ and $p_2(\beta_l)$, which determines when the small values of $|\beta_l|$ will be penalized and when the small difference values of $|\beta_l - \beta_{l'}|$ will be penalized.
 
-* ``lambda2`` $\lambda_2$ tuning parameter corresponding to $p_2(\beta_j)$.
+* ``lambda2`` $\lambda_2$ tuning parameter corresponding to $p_2(\beta_l)$.
 * ``lambda3`` $\lambda$ tuning parameter corresponding to $\lambda \|B\|_2^2$, controls the amount of ridge shrinkage to apply in order to improve conditioning.
 * ``use.corr`` logical value which indicates whether the variables should be shifted to be zero centered (FALSE by default).
 
